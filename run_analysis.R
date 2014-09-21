@@ -35,7 +35,7 @@ for (i in 1:10299){                     #Loops through the last column of the da
 
 ## Part 5
 dfLab <- aggregate(dataAct[,1], by=list(Activity = dataAct[,80], Subject = dataAct[,81]), mean)
-dfLab <- dfLab[1:2]
+dfLab <- dfLab[1:2] #We create a Data Frame with the Activities and Subjects columns.
 for (i in 1:79){
         temp <- aggregate(dataAct[,1], by=list(Activity = dataAct[,80], Subject = dataAct[,81]), mean)
         dfLab <- cbind(dfLab, a[3])
