@@ -1,6 +1,6 @@
-##Code Book
+#Code Book
 
-#Variables:
+##Variables:
 
 For each record Samsung provided:
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
@@ -9,7 +9,7 @@ For each record Samsung provided:
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-#Code:
+##Code:
 
 Note: All the code in the script is commented with details. However, I will also explain it here.
 
