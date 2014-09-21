@@ -35,10 +35,10 @@ for (i in 1:10299){                     #Loops through the last column of the da
 
 ## Part 5
 dfLab <- aggregate(dataAct[,1], by=list(Activity = dataAct[,80], Subject = dataAct[,81]), mean)
-dfLab <- dfLab[1:2] #We create a Data Frame with the Activities and Subjects columns.
+dfLab <- dfLab[1:2] #Creates a Data Frame with the Activities and Subjects columns.
 for (i in 1:79){
         temp <- aggregate(dataAct[,1], by=list(Activity = dataAct[,80], Subject = dataAct[,81]), mean)
-        dfLab <- cbind(dfLab, a[3])
+        dfLab <- cbind(dfLab, temp[3]) #Loop that agregates using Activities and Subjects fators and cbinds for every variable.
 }
-colnames(dfLab) <- c("Activity", "Subject", colnames(measu))
-write.table(dfLab, "Tidy Data Set.txt", row.names = F)
+colnames(dfLab) <- c("Activity", "Subject", colnames(measu)) #Tidy data using the names of the variables available in "measu"
+write.table(dfLab, "Tidy Data Set.txt", row.names = F) #Writes the Tidy Data Set in a text file.
