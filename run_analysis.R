@@ -20,12 +20,12 @@ measu <- data[,append(grepMean, grepSD)] #Subsets "data" using both vectors (gre
 ## Part 3:
 trainAct <- read.table("UCI HAR Dataset/train/Y_train.txt") #Loads train
 testAct <- read.table("UCI HAR Dataset/test/Y_test.txt") #and test activities.
-trainSub <- read.table("UCI HAR Dataset/train/subject_train.txt")
-testSub <- read.table("UCI HAR Dataset/test/subject_test.txt")
-activity <- rbind(trainAct, testAct) #Merges both in a vector named activity.
-subject <- rbind(trainSub, testSub) 
-dataAct <- cbind(measu, c("Activity" = activity)) #Column-binds it to our data (measu)
-dataAct <- cbind(dataAct, c("Subject" = subject))
+trainSub <- read.table("UCI HAR Dataset/train/subject_train.txt") #Same with train
+testSub <- read.table("UCI HAR Dataset/test/subject_test.txt") #and test subjects.
+activity <- rbind(trainAct, testAct) #Merges trainAct and testAct in a vector named "activity".
+subject <- rbind(trainSub, testSub)  #Same with trainSub and testSub in "subject"
+dataAct <- cbind(measu, c("Activity" = activity)) #Column-binds it to our data ("measu").
+dataAct <- cbind(dataAct, c("Subject" = subject)) #Same to "dataAct".
 actiVec <- c("Walking", "Walking Upstairs", "Walking Downstairs", "Sitting", "Standing", "Laying")
 #Creates a vector with the activities name
 for (i in 1:10299){                     #Loops through the last column of the data frame (activities), row
