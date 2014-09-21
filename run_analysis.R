@@ -41,6 +41,4 @@ for (i in 1:79){
         dfLab <- cbind(dfLab, a[3])
 }
 colnames(dfLab) <- c("Activity", "Subject", colnames(measu))
-colnames(measu)
-
 write.table(dfLab, "Tidy Data Set.txt", row.names = F)
