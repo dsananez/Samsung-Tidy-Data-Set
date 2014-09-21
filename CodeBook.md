@@ -1,5 +1,16 @@
 ##Code Book
 
+#Variables:
+
+For each record Samsung provided:
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+#Code:
+
 Note: All the code in the script is commented with details. However, I will also explain it here.
 
 First of all, its important to set the folder containing "UCI HAR Dataset" as the Working Directory, not the "UCI HAR Dataset" folder per se.
