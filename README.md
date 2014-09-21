@@ -1,14 +1,17 @@
 Samsung Tidy Data Set
 =====================
 
-Note: All the code in the script is commented with details. However, I will also explain it here.
+The goal of the script is to prepare tidy data that can be used for later analysis. The data used is: Human Activity Recognition Using Smartphones Dataset.
+5 basic steps were made:
 
-First of all, its important to set the folder containing "UCI HAR Dataset" as the Working Directory, not the "UCI HAR Dataset" folder per se.
+1) Merges the training and the test sets to create one data set.
+2) Extracts only the measurements on the mean and standard deviation for each measurement. 
+3) Uses descriptive activity names to name the activities in the data set
+4) Appropriately labels the data set with descriptive variable names. 
+5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-The train set and the test set are loaded using read.table(). Then both data frames get merged into a new one called "data". The list of descrptive variables (called features) is readed the same way but gets subsetted because the only column/vector needed is the one containing the names. That vector ("features") is used to label the data (with colnames()).
+However, the 4 step was made earlier in order to work in a cleaner data frame.
 
-grep() is used to look for "mean()" and "std()" in the string vector "features". The vector returned is used to subset "data" to include only the columns ending in "mean()" or "std()", calling the new data set "measu". 
+Additional notes about the data set given by the provider: 
 
-Train and test activities are loaded using read.table() through the files "UCI HAR Dataset/train/Y_train.txt" and "UCI HAR Dataset/test/Y_test.txt". Both vectors get merged in a new vector named "activity". cbind() is used to column-bind this "activity" vector to the "measu" data set into a new data set called "dataAct". A vector including all activities labels is created and called "actiVec". A loop is runned to replace the numbers in the "activities" columns of the "dataAct" data set, with the string labels available in the "actiVec".
-
-An empty data frame called "meanData" is cretated to store the last tidy data set containing the mean of every column for each activity. A new Loop is runned column per column using tapply to calculate the mean of each one, setting the activities column as the index. "meanData" gets tidy using the actiVec vector to label the columns and the column names we used in our previous data sets now as the row names.
+"The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. "
