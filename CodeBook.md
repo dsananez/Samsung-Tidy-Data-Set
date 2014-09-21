@@ -1,3 +1,5 @@
+##Code Book
+
 Note: All the code in the script is commented with details. However, I will also explain it here.
 
 First of all, its important to set the folder containing "UCI HAR Dataset" as the Working Directory, not the "UCI HAR Dataset" folder per se.
